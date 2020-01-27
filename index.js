@@ -10,10 +10,8 @@ function findWord(matrix, word) {
     var verticalString = '';
     for (var j = 0; j < matrix.length; j++) {
         for (var i = 0; i < matrix.length; i++) {
-            var arrEach = matrix[i];
-            var firstCharacter = matrix[i][j];
-            verticalString += firstCharacter;
-            arrEach.forEach(character => {
+            verticalString += matrix[i][j];
+            matrix[i].forEach(character => {
                 string += character;
             });
             if (string == word || verticalString == word) {
@@ -23,8 +21,6 @@ function findWord(matrix, word) {
         }
         verticalString = '';
     }
-    string = '';
-    verticalString = '';
     if (string !== word) {
         return false;
     }
